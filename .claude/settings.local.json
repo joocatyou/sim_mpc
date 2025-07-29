@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(colcon build:*)",
+      "Bash(source:*)",
+      "Bash(ros2 run:*)",
+      "Bash(timeout 10 ros2 run:*)"
+    ],
+    "deny": []
+  }
+}

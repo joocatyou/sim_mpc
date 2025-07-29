@@ -1,0 +1,138 @@
+[0.248s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'list', '-p', '--base-paths', '/home/joo/autonomous_navigation_ws']
+[0.248s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='list', build_base='build', ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['/home/joo/autonomous_navigation_ws'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], topological_order=False, names_only=False, paths_only=True, topological_graph=False, topological_graph_dot=False, topological_graph_density=False, topological_graph_legend=False, topological_graph_dot_cluster=False, topological_graph_dot_include_skipped=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x77c0f393f0a0>, verb_extension=<colcon_package_information.verb.list.ListVerb object at 0x77c0f393dcf0>, main=<bound method ListVerb.main of <colcon_package_information.verb.list.ListVerb object at 0x77c0f393dcf0>>, mixin_verb=('list',))
+[0.844s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.845s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.845s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.845s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.846s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.846s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/joo/autonomous_navigation_ws'
+[0.846s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws) by extensions ['ignore', 'ignore_ament_install']
+[0.846s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws) by extension 'ignore'
+[0.847s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws) by extension 'ignore_ament_install'
+[0.847s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws) by extensions ['colcon_pkg']
+[0.847s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws) by extension 'colcon_pkg'
+[0.847s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws) by extensions ['colcon_meta']
+[0.847s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws) by extension 'colcon_meta'
+[0.847s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws) by extensions ['ros']
+[0.847s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws) by extension 'ros'
+[0.908s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws) by extensions ['cmake', 'python']
+[0.908s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws) by extension 'cmake'
+[0.908s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws) by extension 'python'
+[0.908s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws) by extensions ['python_setup_py']
+[0.908s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws) by extension 'python_setup_py'
+[0.908s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/build) by extensions ['ignore', 'ignore_ament_install']
+[0.909s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/build) by extension 'ignore'
+[0.909s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/build) ignored
+[0.909s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code) by extensions ['ignore', 'ignore_ament_install']
+[0.909s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code) by extension 'ignore'
+[0.909s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code) by extension 'ignore_ament_install'
+[0.909s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code) by extensions ['colcon_pkg']
+[0.909s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code) by extension 'colcon_pkg'
+[0.910s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code) by extensions ['colcon_meta']
+[0.910s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code) by extension 'colcon_meta'
+[0.910s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code) by extensions ['ros']
+[0.910s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code) by extension 'ros'
+[0.910s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code) by extensions ['cmake', 'python']
+[0.910s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code) by extension 'cmake'
+[0.910s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code) by extension 'python'
+[0.910s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code) by extensions ['python_setup_py']
+[0.910s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code) by extension 'python_setup_py'
+[0.911s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_constraints) by extensions ['ignore', 'ignore_ament_install']
+[0.911s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_constraints) by extension 'ignore'
+[0.911s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_constraints) by extension 'ignore_ament_install'
+[0.911s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_constraints) by extensions ['colcon_pkg']
+[0.911s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_constraints) by extension 'colcon_pkg'
+[0.911s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_constraints) by extensions ['colcon_meta']
+[0.911s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_constraints) by extension 'colcon_meta'
+[0.911s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_constraints) by extensions ['ros']
+[0.912s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_constraints) by extension 'ros'
+[0.912s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_constraints) by extensions ['cmake', 'python']
+[0.912s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_constraints) by extension 'cmake'
+[0.912s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_constraints) by extension 'python'
+[0.912s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_constraints) by extensions ['python_setup_py']
+[0.913s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_constraints) by extension 'python_setup_py'
+[0.913s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_model) by extensions ['ignore', 'ignore_ament_install']
+[0.913s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_model) by extension 'ignore'
+[0.914s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_model) by extension 'ignore_ament_install'
+[0.914s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_model) by extensions ['colcon_pkg']
+[0.914s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_model) by extension 'colcon_pkg'
+[0.914s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_model) by extensions ['colcon_meta']
+[0.914s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_model) by extension 'colcon_meta'
+[0.914s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_model) by extensions ['ros']
+[0.915s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_model) by extension 'ros'
+[0.915s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_model) by extensions ['cmake', 'python']
+[0.915s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_model) by extension 'cmake'
+[0.915s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_model) by extension 'python'
+[0.915s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_model) by extensions ['python_setup_py']
+[0.915s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/c_generated_code/diff_drive_robot_model) by extension 'python_setup_py'
+[0.915s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/install) by extensions ['ignore', 'ignore_ament_install']
+[0.916s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/install) by extension 'ignore'
+[0.916s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/install) ignored
+[0.916s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/log) by extensions ['ignore', 'ignore_ament_install']
+[0.916s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/log) by extension 'ignore'
+[0.916s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/log) ignored
+[0.917s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src) by extensions ['ignore', 'ignore_ament_install']
+[0.917s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src) by extension 'ignore'
+[0.917s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src) by extension 'ignore_ament_install'
+[0.918s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src) by extensions ['colcon_pkg']
+[0.918s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src) by extension 'colcon_pkg'
+[0.919s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src) by extensions ['colcon_meta']
+[0.919s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src) by extension 'colcon_meta'
+[0.919s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src) by extensions ['ros']
+[0.919s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src) by extension 'ros'
+[0.919s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src) by extensions ['cmake', 'python']
+[0.919s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src) by extension 'cmake'
+[0.919s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src) by extension 'python'
+[0.919s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src) by extensions ['python_setup_py']
+[0.919s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src) by extension 'python_setup_py'
+[0.920s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/autonomous_launcher) by extensions ['ignore', 'ignore_ament_install']
+[0.920s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/autonomous_launcher) by extension 'ignore'
+[0.920s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/autonomous_launcher) by extension 'ignore_ament_install'
+[0.920s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/autonomous_launcher) by extensions ['colcon_pkg']
+[0.920s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/autonomous_launcher) by extension 'colcon_pkg'
+[0.920s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/autonomous_launcher) by extensions ['colcon_meta']
+[0.920s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/autonomous_launcher) by extension 'colcon_meta'
+[0.920s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/autonomous_launcher) by extensions ['ros']
+[0.921s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/autonomous_launcher) by extension 'ros'
+[0.925s] DEBUG:colcon.colcon_core.package_identification:Package '/home/joo/autonomous_navigation_ws/src/autonomous_launcher' with type 'ros.ament_python' and name 'autonomous_launcher'
+[0.925s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/mpc_controller) by extensions ['ignore', 'ignore_ament_install']
+[0.926s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/mpc_controller) by extension 'ignore'
+[0.926s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/mpc_controller) by extension 'ignore_ament_install'
+[0.926s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/mpc_controller) by extensions ['colcon_pkg']
+[0.926s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/mpc_controller) by extension 'colcon_pkg'
+[0.926s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/mpc_controller) by extensions ['colcon_meta']
+[0.926s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/mpc_controller) by extension 'colcon_meta'
+[0.926s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/mpc_controller) by extensions ['ros']
+[0.926s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/mpc_controller) by extension 'ros'
+[0.928s] DEBUG:colcon.colcon_core.package_identification:Package '/home/joo/autonomous_navigation_ws/src/mpc_controller' with type 'ros.ament_python' and name 'mpc_controller'
+[0.929s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/obstacle_detection) by extensions ['ignore', 'ignore_ament_install']
+[0.929s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/obstacle_detection) by extension 'ignore'
+[0.929s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/obstacle_detection) by extension 'ignore_ament_install'
+[0.929s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/obstacle_detection) by extensions ['colcon_pkg']
+[0.929s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/obstacle_detection) by extension 'colcon_pkg'
+[0.929s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/obstacle_detection) by extensions ['colcon_meta']
+[0.929s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/obstacle_detection) by extension 'colcon_meta'
+[0.930s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/obstacle_detection) by extensions ['ros']
+[0.930s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/obstacle_detection) by extension 'ros'
+[0.932s] DEBUG:colcon.colcon_core.package_identification:Package '/home/joo/autonomous_navigation_ws/src/obstacle_detection' with type 'ros.ament_python' and name 'obstacle_detection'
+[0.932s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/path_planner) by extensions ['ignore', 'ignore_ament_install']
+[0.933s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/path_planner) by extension 'ignore'
+[0.933s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/path_planner) by extension 'ignore_ament_install'
+[0.933s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/path_planner) by extensions ['colcon_pkg']
+[0.933s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/path_planner) by extension 'colcon_pkg'
+[0.933s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/path_planner) by extensions ['colcon_meta']
+[0.933s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/path_planner) by extension 'colcon_meta'
+[0.934s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/path_planner) by extensions ['ros']
+[0.934s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/path_planner) by extension 'ros'
+[0.936s] DEBUG:colcon.colcon_core.package_identification:Package '/home/joo/autonomous_navigation_ws/src/path_planner' with type 'ros.ament_python' and name 'path_planner'
+[0.936s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/robot_description) by extensions ['ignore', 'ignore_ament_install']
+[0.936s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/robot_description) by extension 'ignore'
+[0.936s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/robot_description) by extension 'ignore_ament_install'
+[0.937s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/robot_description) by extensions ['colcon_pkg']
+[0.937s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/robot_description) by extension 'colcon_pkg'
+[0.937s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/robot_description) by extensions ['colcon_meta']
+[0.937s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/robot_description) by extension 'colcon_meta'
+[0.937s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/robot_description) by extensions ['ros']
+[0.937s] Level 1:colcon.colcon_core.package_identification:_identify(/home/joo/autonomous_navigation_ws/src/robot_description) by extension 'ros'
+[0.939s] DEBUG:colcon.colcon_core.package_identification:Package '/home/joo/autonomous_navigation_ws/src/robot_description' with type 'ros.ament_python' and name 'robot_description'
+[0.939s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults

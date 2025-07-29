@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+autonomous_launcher/__init__.py
+autonomous_launcher.egg-info/PKG-INFO
+autonomous_launcher.egg-info/SOURCES.txt
+autonomous_launcher.egg-info/dependency_links.txt
+autonomous_launcher.egg-info/entry_points.txt
+autonomous_launcher.egg-info/requires.txt
+autonomous_launcher.egg-info/top_level.txt
+autonomous_launcher.egg-info/zip-safe
+launch/autonomous_navigation.launch copy 2.py
+launch/autonomous_navigation.launch copy.py
+launch/autonomous_navigation.launch.py
+launch/simulation_only.launch.py
+resource/autonomous_launcher

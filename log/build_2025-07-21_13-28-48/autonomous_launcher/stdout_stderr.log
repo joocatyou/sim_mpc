@@ -1,0 +1,26 @@
+running develop
+running egg_info
+creating autonomous_launcher.egg-info
+writing autonomous_launcher.egg-info/PKG-INFO
+writing dependency_links to autonomous_launcher.egg-info/dependency_links.txt
+writing entry points to autonomous_launcher.egg-info/entry_points.txt
+writing requirements to autonomous_launcher.egg-info/requires.txt
+writing top-level names to autonomous_launcher.egg-info/top_level.txt
+writing manifest file 'autonomous_launcher.egg-info/SOURCES.txt'
+reading manifest file 'autonomous_launcher.egg-info/SOURCES.txt'
+writing manifest file 'autonomous_launcher.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/joo/autonomous_navigation_ws/install/autonomous_launcher/lib/python3.10/site-packages/autonomous-launcher.egg-link (link to .)
+
+Installed /home/joo/autonomous_navigation_ws/build/autonomous_launcher
+running symlink_data
+creating /home/joo/autonomous_navigation_ws/install/autonomous_launcher/share/ament_index
+creating /home/joo/autonomous_navigation_ws/install/autonomous_launcher/share/ament_index/resource_index
+creating /home/joo/autonomous_navigation_ws/install/autonomous_launcher/share/ament_index/resource_index/packages
+symbolically linking /home/joo/autonomous_navigation_ws/build/autonomous_launcher/resource/autonomous_launcher -> /home/joo/autonomous_navigation_ws/install/autonomous_launcher/share/ament_index/resource_index/packages
+symbolically linking /home/joo/autonomous_navigation_ws/build/autonomous_launcher/package.xml -> /home/joo/autonomous_navigation_ws/install/autonomous_launcher/share/autonomous_launcher
+creating /home/joo/autonomous_navigation_ws/install/autonomous_launcher/share/autonomous_launcher/launch
+symbolically linking /home/joo/autonomous_navigation_ws/build/autonomous_launcher/launch/autonomous_navigation.launch copy 2.py -> /home/joo/autonomous_navigation_ws/install/autonomous_launcher/share/autonomous_launcher/launch
+symbolically linking /home/joo/autonomous_navigation_ws/build/autonomous_launcher/launch/autonomous_navigation.launch.py -> /home/joo/autonomous_navigation_ws/install/autonomous_launcher/share/autonomous_launcher/launch
+symbolically linking /home/joo/autonomous_navigation_ws/build/autonomous_launcher/launch/autonomous_navigation.launch copy.py -> /home/joo/autonomous_navigation_ws/install/autonomous_launcher/share/autonomous_launcher/launch
+symbolically linking /home/joo/autonomous_navigation_ws/build/autonomous_launcher/launch/simulation_only.launch.py -> /home/joo/autonomous_navigation_ws/install/autonomous_launcher/share/autonomous_launcher/launch

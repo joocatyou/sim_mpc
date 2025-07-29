@@ -1,0 +1,22 @@
+running develop
+running egg_info
+creating path_planner.egg-info
+writing path_planner.egg-info/PKG-INFO
+writing dependency_links to path_planner.egg-info/dependency_links.txt
+writing entry points to path_planner.egg-info/entry_points.txt
+writing requirements to path_planner.egg-info/requires.txt
+writing top-level names to path_planner.egg-info/top_level.txt
+writing manifest file 'path_planner.egg-info/SOURCES.txt'
+reading manifest file 'path_planner.egg-info/SOURCES.txt'
+writing manifest file 'path_planner.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/joo/autonomous_navigation_ws/install/path_planner/lib/python3.10/site-packages/path-planner.egg-link (link to .)
+Installing astar_planner script to /home/joo/autonomous_navigation_ws/install/path_planner/lib/path_planner
+
+Installed /home/joo/autonomous_navigation_ws/build/path_planner
+running symlink_data
+creating /home/joo/autonomous_navigation_ws/install/path_planner/share/ament_index
+creating /home/joo/autonomous_navigation_ws/install/path_planner/share/ament_index/resource_index
+creating /home/joo/autonomous_navigation_ws/install/path_planner/share/ament_index/resource_index/packages
+symbolically linking /home/joo/autonomous_navigation_ws/build/path_planner/resource/path_planner -> /home/joo/autonomous_navigation_ws/install/path_planner/share/ament_index/resource_index/packages
+symbolically linking /home/joo/autonomous_navigation_ws/build/path_planner/package.xml -> /home/joo/autonomous_navigation_ws/install/path_planner/share/path_planner

@@ -1,0 +1,4 @@
+[console_scripts]
+acados_mpc_node = mpc_controller.acados_mpc_controller:main
+mpc_controller = mpc_controller.mpc_controller:main
+

@@ -1,0 +1,15 @@
+package.xml
+setup.cfg
+setup.py
+mpc_controller/__init__.py
+mpc_controller/acados_mpc_controller.py
+mpc_controller/robot_model.py
+mpc_controller/robot_model_settings.py
+mpc_controller.egg-info/PKG-INFO
+mpc_controller.egg-info/SOURCES.txt
+mpc_controller.egg-info/dependency_links.txt
+mpc_controller.egg-info/entry_points.txt
+mpc_controller.egg-info/requires.txt
+mpc_controller.egg-info/top_level.txt
+mpc_controller.egg-info/zip-safe
+resource/mpc_controller

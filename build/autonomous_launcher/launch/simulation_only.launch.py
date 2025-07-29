@@ -1,0 +1,1 @@
+/home/joo/autonomous_navigation_ws/src/autonomous_launcher/launch/simulation_only.launch.py
