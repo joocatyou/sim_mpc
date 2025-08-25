@@ -12,5 +12,6 @@ autonomous_launcher.egg-info/zip-safe
 launch/autonomous_navigation.launch copy 2.py
 launch/autonomous_navigation.launch copy.py
 launch/autonomous_navigation.launch.py
+launch/rtabmap_navigation.launch.py
 launch/simulation_only.launch.py
 resource/autonomous_launcher

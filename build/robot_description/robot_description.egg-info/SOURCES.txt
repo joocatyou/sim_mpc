@@ -3,6 +3,7 @@ setup.cfg
 setup.py
 launch/gazebo.launch.py
 launch/robot_description.launch.py
+launch/rtabmap_visualize.launch.py
 resource/robot_description
 robot_description/__init__.py
 robot_description.egg-info/PKG-INFO
@@ -19,3 +20,4 @@ urdf/robot.urdf_2.xacro
 urdf/robot.urdf_3.xacro
 urdf/robot.urdf_4.xacro
 urdf/robot.urdf_6.xacro
+urdf/rtabmap_robot.urdf

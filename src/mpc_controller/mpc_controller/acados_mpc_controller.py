@@ -4,7 +4,8 @@ import rclpy
 from rclpy.node import Node
 import numpy as np
 import os
-from robot_model_settings import create_acados_solver_differential_drive
+from acados_template import AcadosOcpSolver
+from .model import create_differential_drive_model
 
 # ROS2 메시지 타입 임포트
 from nav_msgs.msg import Odometry, Path
@@ -21,7 +22,7 @@ class AcadosMpcController(Node):
         super().__init__('acados_mpc_controller')
 
         # 파라미터 선언
-        self.declare_parameter('target_speed', 0.8)
+        self.declare_parameter('target_speed', 2.5)
         self.declare_parameter('prediction_horizon', 1.0)
         self.declare_parameter('N_horizon', 10)
         self.declare_parameter('control_frequency', 10.0)
@@ -38,15 +39,15 @@ class AcadosMpcController(Node):
         try:
             self.get_logger().info("ACADOS 솔버를 초기화합니다...")
             
-            # C 코드 생성 디렉토리 설정
-            code_export_directory = os.path.join(os.path.dirname(__file__), 'c_generated_code')
-            os.makedirs(code_export_directory, exist_ok=True)
-            json_file = os.path.join(code_export_directory, "acados_ocp_diff_drive.json")
+            # 새로 생성된 솔버 로드
+            self.model = create_differential_drive_model()
             
-            # 솔버 생성
-            self.solver, self.model, self.ocp = create_acados_solver_differential_drive(
-                Tf=self.Tf, N=self.N, json_file=json_file
-            )
+            # JSON 파일 경로 설정 (소스 디렉토리에서)
+            src_dir = "/home/joo/autonomous_navigation_ws/src/mpc_controller/mpc_controller"
+            json_file = os.path.join(src_dir, "acados_ocp_differential_drive_robot.json")
+            
+            # 솔버 생성 (generate=False, build=False로 기존 솔버 로드)
+            self.solver = AcadosOcpSolver(None, json_file=json_file, generate=False, build=False)
             
             # 모델 차원 정보
             self.nx = self.model.x.rows()
@@ -112,17 +113,17 @@ class AcadosMpcController(Node):
             return
 
         try:
-            # 참조 궤적 생성
-            y_ref_horizon = self._generate_reference_trajectory()
-            if y_ref_horizon is None:
+            # 참조 궤적 생성 (5D 모델용)
+            ref_trajectory = self._generate_reference_trajectory_5d()
+            if ref_trajectory is None:
                 self._publish_stop_command()
                 return
 
-            # 참조값 설정 (공식 예제 스타일)
-            self._set_reference_trajectory(y_ref_horizon)
+            # 참조값 설정
+            self._set_reference_trajectory_5d(ref_trajectory)
             
             # 파라미터 설정 (장애물 정보)
-            self._set_obstacle_parameters()
+            # self._set_obstacle_parameters()
             
             # 현재 상태 제약 설정
             self.solver.set(0, "lbx", self.current_state)
@@ -152,7 +153,7 @@ class AcadosMpcController(Node):
             self.get_logger().error(f"제어 루프 오류: {e}")
             self._publish_stop_command()
 
-    def _generate_reference_trajectory(self):
+    def _generate_reference_trajectory_5d(self):
         """참조 궤적 생성 - 공식 예제 스타일 개선"""
         if self.global_path is None or len(self.global_path) < 2:
             return None
@@ -197,41 +198,34 @@ class AcadosMpcController(Node):
             
             ref_points[i, :] = current_ref_point
 
-        # y_ref 벡터 구성
-        y_ref_horizon = np.zeros((self.N + 1, self.ny))
+        # 5D 참조 궤적 구성: [x, y, psi, v, omega]
+        ref_states = np.zeros((self.N + 1, 5))
 
         for i in range(self.N + 1):
             # 위치 참조
-            y_ref_horizon[i, 0] = ref_points[i, 0]  # x_ref
-            y_ref_horizon[i, 1] = ref_points[i, 1]  # y_ref
+            ref_states[i, 0] = ref_points[i, 0]  # x_ref
+            ref_states[i, 1] = ref_points[i, 1]  # y_ref
             
             # 헤딩 각도 계산
             if i < self.N:
                 delta = ref_points[i+1] - ref_points[i]
                 if np.linalg.norm(delta) > 1e-6:
-                    y_ref_horizon[i, 2] = np.arctan2(delta[1], delta[0])
+                    ref_states[i, 2] = np.arctan2(delta[1], delta[0])
                 else:
-                    y_ref_horizon[i, 2] = y_ref_horizon[i-1, 2] if i > 0 else self.current_state[2]
+                    ref_states[i, 2] = ref_states[i-1, 2] if i > 0 else self.current_state[2]
             else:
-                y_ref_horizon[i, 2] = y_ref_horizon[i-1, 2]
+                ref_states[i, 2] = ref_states[i-1, 2]
             
             # 속도 참조
-            y_ref_horizon[i, 3] = self.target_speed  # v_ref
-            y_ref_horizon[i, 4] = 0.0               # omega_ref
-            
-            # 제어 입력 참조 (중간 단계만)
-            if i < self.N:
-                y_ref_horizon[i, 5] = 0.0  # a_ref
-                y_ref_horizon[i, 6] = 0.0  # alpha_ref
+            ref_states[i, 3] = self.target_speed  # v_ref
+            ref_states[i, 4] = 0.0               # omega_ref
 
-        return y_ref_horizon
+        return ref_states
 
-    def _set_reference_trajectory(self, y_ref_horizon):
-        for k in range(self.N):
-            self.solver.set(k, "yref", y_ref_horizon[k])
-        
-        # 터미널 참조값 설정
-        self.solver.set(self.N, "yref", y_ref_horizon[self.N, :self.ny_e])
+    def _set_reference_trajectory_5d(self, ref_states):
+        # 온라인 파라미터로 참조값 설정
+        for k in range(self.N + 1):
+            self.solver.set(k, "p", ref_states[k])  # [x_ref, y_ref, psi_ref, v_ref, omega_ref]
 
 
     def _publish_control_command(self):
@@ -245,9 +239,9 @@ class AcadosMpcController(Node):
         twist_msg.linear.x = float(x_next[3])   # v
         twist_msg.angular.z = float(x_next[4])  # omega
         
-        # 제어 입력 제한
-        twist_msg.linear.x = np.clip(twist_msg.linear.x, self.model.v_min, self.model.v_max)
-        twist_msg.angular.z = np.clip(twist_msg.angular.z, self.model.omega_min, self.model.omega_max)
+        # 제어 입력 제한 (모델과 일치)
+        twist_msg.linear.x = np.clip(twist_msg.linear.x, -1.5, 3.5)
+        twist_msg.angular.z = np.clip(twist_msg.angular.z, -3.0, 3.0)
         
         self.cmd_vel_pub.publish(twist_msg)
 

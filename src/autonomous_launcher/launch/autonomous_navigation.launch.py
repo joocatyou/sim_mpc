@@ -51,11 +51,11 @@ def generate_launch_description():
     )
 
     # Launch Gazebo with robot
-    gazebo_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(pkg_robot_description, 'launch', 'gazebo.launch.py')
-        )
-    )
+    #gazebo_launch = IncludeLaunchDescription(
+    #    PythonLaunchDescriptionSource(
+    #        os.path.join(pkg_robot_description, 'launch', 'gazebo.launch.py')
+    #    )
+    #)
     
     # Launch obstacle detector
     obstacle_detector_node = Node(
@@ -74,12 +74,12 @@ def generate_launch_description():
     )
     
     # Launch MPC controller
-    mpc_controller_node = Node(
-        package='mpc_controller',
-        executable='acados_mpc_node',
-        name='acados_mpc_controller',
-        output='screen'
-    )
+    #mpc_controller_node = Node(
+    #    package='mpc_controller',
+    #    executable='acados_mpc_node',
+    #    name='acados_mpc_controller',
+    #    output='screen'
+    #)
     
     # Define RViz config file
     rviz_config_file = os.path.join(
@@ -103,9 +103,9 @@ def generate_launch_description():
         robot_state_publisher_node,
         joint_state_publisher_node,
         
-        gazebo_launch,
+        #gazebo_launch,
         obstacle_detector_node,
         astar_planner_node,
-        mpc_controller_node,
+        #mpc_controller_node,
         rviz_node
     ])

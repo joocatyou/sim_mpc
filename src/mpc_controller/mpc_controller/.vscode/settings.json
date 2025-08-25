@@ -1,0 +1,30 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/joo/autonomous_navigation_ws/build/autonomous_launcher",
+        "/home/joo/autonomous_navigation_ws/install/autonomous_launcher/lib/python3.10/site-packages",
+        "/home/joo/autonomous_navigation_ws/build/robot_description",
+        "/home/joo/autonomous_navigation_ws/install/robot_description/lib/python3.10/site-packages",
+        "/home/joo/autonomous_navigation_ws/build/path_planner",
+        "/home/joo/autonomous_navigation_ws/install/path_planner/lib/python3.10/site-packages",
+        "/home/joo/autonomous_navigation_ws/build/obstacle_detection",
+        "/home/joo/autonomous_navigation_ws/install/obstacle_detection/lib/python3.10/site-packages",
+        "/home/joo/autonomous_navigation_ws/build/mpc_controller",
+        "/home/joo/autonomous_navigation_ws/install/mpc_controller/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/joo/autonomous_navigation_ws/build/autonomous_launcher",
+        "/home/joo/autonomous_navigation_ws/install/autonomous_launcher/lib/python3.10/site-packages",
+        "/home/joo/autonomous_navigation_ws/build/robot_description",
+        "/home/joo/autonomous_navigation_ws/install/robot_description/lib/python3.10/site-packages",
+        "/home/joo/autonomous_navigation_ws/build/path_planner",
+        "/home/joo/autonomous_navigation_ws/install/path_planner/lib/python3.10/site-packages",
+        "/home/joo/autonomous_navigation_ws/build/obstacle_detection",
+        "/home/joo/autonomous_navigation_ws/install/obstacle_detection/lib/python3.10/site-packages",
+        "/home/joo/autonomous_navigation_ws/build/mpc_controller",
+        "/home/joo/autonomous_navigation_ws/install/mpc_controller/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

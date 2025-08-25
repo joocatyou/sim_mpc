@@ -35,31 +35,38 @@
 # model
 MODEL_SRC=
 
-MODEL_SRC+= diff_drive_robot_model/diff_drive_robot_expl_ode_fun.c
-MODEL_SRC+= diff_drive_robot_model/diff_drive_robot_expl_vde_forw.c
-MODEL_SRC+= diff_drive_robot_model/diff_drive_robot_expl_vde_adj.c
+MODEL_SRC+= lmpcc_model_model/lmpcc_model_expl_ode_fun.c
+MODEL_SRC+= lmpcc_model_model/lmpcc_model_expl_vde_forw.c
+MODEL_SRC+= lmpcc_model_model/lmpcc_model_expl_vde_adj.c
 
 MODEL_OBJ := $(MODEL_SRC:.c=.o)
 # optimal control problem - mostly CasADi exports
 OCP_SRC=
 
 
-OCP_SRC+= diff_drive_robot_constraints/diff_drive_robot_constr_h_fun_jac_uxt_zt.c
-OCP_SRC+= diff_drive_robot_constraints/diff_drive_robot_constr_h_fun.c
+OCP_SRC+= lmpcc_model_cost/lmpcc_model_cost_y_0_fun.c
+OCP_SRC+= lmpcc_model_cost/lmpcc_model_cost_y_0_fun_jac_ut_xt.c
+OCP_SRC+= lmpcc_model_cost/lmpcc_model_cost_y_0_hess.c
+OCP_SRC+= lmpcc_model_cost/lmpcc_model_cost_y_fun.c
+OCP_SRC+= lmpcc_model_cost/lmpcc_model_cost_y_fun_jac_ut_xt.c
+OCP_SRC+= lmpcc_model_cost/lmpcc_model_cost_y_hess.c
+OCP_SRC+= lmpcc_model_cost/lmpcc_model_cost_y_e_fun.c
+OCP_SRC+= lmpcc_model_cost/lmpcc_model_cost_y_e_fun_jac_ut_xt.c
+OCP_SRC+= lmpcc_model_cost/lmpcc_model_cost_y_e_hess.c
 
-OCP_SRC+= acados_solver_diff_drive_robot.c
+OCP_SRC+= acados_solver_lmpcc_model.c
 
 OCP_OBJ := $(OCP_SRC:.c=.o)
 # for sim solver
-SIM_SRC= acados_sim_solver_diff_drive_robot.c
+SIM_SRC= acados_sim_solver_lmpcc_model.c
 SIM_OBJ := $(SIM_SRC:.c=.o)
 
 # for target example_sim
-EX_SIM_SRC= main_sim_diff_drive_robot.c
+EX_SIM_SRC= main_sim_lmpcc_model.c
 EX_SIM_OBJ := $(EX_SIM_SRC:.c=.o)
 EX_SIM_EXE := $(EX_SIM_SRC:.c=)
 # for target example
-EX_SRC= main_diff_drive_robot.c
+EX_SRC= main_lmpcc_model.c
 EX_OBJ := $(EX_SRC:.c=.o)
 EX_EXE := $(EX_SRC:.c=)
 
@@ -101,8 +108,8 @@ LDLIBS+= -lm
 LDLIBS+= 
 
 # libraries
-LIBACADOS_SOLVER=libacados_solver_diff_drive_robot.so
-LIBACADOS_OCP_SOLVER=libacados_ocp_solver_diff_drive_robot.so
+LIBACADOS_SOLVER=libacados_solver_lmpcc_model.so
+LIBACADOS_OCP_SOLVER=libacados_ocp_solver_lmpcc_model.so
 LIBACADOS_SIM_SOLVER=lib$(SIM_SRC:.c=.so)
 
 # virtual targets
@@ -152,7 +159,7 @@ ocp_cython: ocp_cython_o
 	-o acados_ocp_solver_pyx.so \
 	-Wl,-rpath=$(LIB_PATH) \
 	acados_ocp_solver_pyx.o \
-	$(abspath .)/libacados_ocp_solver_diff_drive_robot.so \
+	$(abspath .)/libacados_ocp_solver_lmpcc_model.so \
 	$(LDFLAGS) $(LDLIBS)
 
 
@@ -180,7 +187,7 @@ sim_cython: sim_cython_o
 	-o acados_sim_solver_pyx.so \
 	-Wl,-rpath=$(LIB_PATH) \
 	acados_sim_solver_pyx.o \
-	$(abspath .)/libacados_sim_solver_diff_drive_robot.so \
+	$(abspath .)/libacados_sim_solver_lmpcc_model.so \
 	$(LDFLAGS) $(LDLIBS)
 
 clean:
@@ -192,13 +199,13 @@ clean_ocp_shared_lib:
 	$(RM) $(OCP_OBJ)
 
 clean_ocp_cython:
-	$(RM) libacados_ocp_solver_diff_drive_robot.so
-	$(RM) acados_solver_diff_drive_robot.o
+	$(RM) libacados_ocp_solver_lmpcc_model.so
+	$(RM) acados_solver_lmpcc_model.o
 	$(RM) acados_ocp_solver_pyx.so
 	$(RM) acados_ocp_solver_pyx.o
 
 clean_sim_cython:
-	$(RM) libacados_sim_solver_diff_drive_robot.so
-	$(RM) acados_sim_solver_diff_drive_robot.o
+	$(RM) libacados_sim_solver_lmpcc_model.so
+	$(RM) acados_sim_solver_lmpcc_model.o
 	$(RM) acados_sim_solver_pyx.so
 	$(RM) acados_sim_solver_pyx.o

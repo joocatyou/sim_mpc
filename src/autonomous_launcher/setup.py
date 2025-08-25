@@ -22,6 +22,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'odom_tf_publisher = autonomous_launcher.scripts.odom_tf_publisher:main'
         ],
     },
 )
