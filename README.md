@@ -1,6 +1,5 @@
 
 # sim_mpc
-=======
 # Autonomous Navigation System
 
 ## 빌드 방법
